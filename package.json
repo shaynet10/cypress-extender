@@ -1,0 +1,17 @@
+{
+  "name": "cypress-extender",
+  "version": "1.0.0",
+  "description": "Extends the basic functinality of Cypress to ease its usage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Shay Gueta",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^8.2.0"
+  }
+}
