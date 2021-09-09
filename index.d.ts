@@ -1,4 +1,4 @@
-import './src'
+export * from './src';
 
 declare namespace Cypress {
     interface Chainable {
