@@ -1,6 +1,6 @@
 {
   "name": "cypress-extender",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Extends the basic functinality of Cypress to ease its usage.",
   "main": "index.js",
   "scripts": {
