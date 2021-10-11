@@ -19,4 +19,4 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-require('../../index'); //cypress-extender code//
+require('../../src/index'); //cypress-extender code//
