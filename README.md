@@ -1,2 +1,162 @@
 # cypress-extender
-Extends the basic functinality of Cypress to ease its usage.
+
+<p>Cypress Extender, extends the basic functinality of Cypress to ease its usage.
+<p>
+
+<h2> Why </h2>
+<p>In the usual <a href="https://docs.cypress.io/api/commands/get"> cy.get </a>, every test fails, when  element doesn't exist. 
+</p>
+<p>Where sometimes, we want to test cases where element doesn't exist, or we want to wait while while the element doesn't exist</p>
+<p>i.e. open dropdown and wait for inner element to be created there, to identify, it's opened
+</p>
+<p> With Cypress Extender it's possible, in fact we can use an <b>if</b> ccondition, or <b>while</b> loop, to test condition of element</p>
+
+<h2> Prerequisites </h2>
+<p>In order to use this plugin:</p>
+<p>
+    <ul>
+        <li>Cypress must be installed.</li>
+    </ul>
+</p>
+
+<h2>Installation</h2>
+<p>To install the plugin to your project please use:</p>
+
+```javascript
+npm install cypress-extender
+```
+<p>
+in order to also add it to your package.json file so you can use:</p>
+
+```
+npm install --save-prod cypress-extender
+```
+
+<h2>Manual</h2>
+<p>
+Once Cypress Extender is installed, </p>
+<p>there are 2 main options to use this plugin
+    <ul>
+        <li>initCypress - adds this plugin's commands to cypress</li>
+        <li>load and use specific function - doesn't change anything in cypress commands</li>
+    </ul>
+</p>
+
+<h2>initCypress</h2>
+<p> in order to load all the extender commands to cypress use:</p>
+
+```javascript
+const { initCypress } = require('cypress-extender');
+initCypress();
+```
+
+or alternativly:
+
+```javascript
+import { initCypress } from 'cypress-extender';
+initCypress();
+```
+
+in both ways, you'll get many new functions added to cypress, such as:
+
+```javascript
+
+        cy.exists('body').should('be.true');
+        cy.exists('bodyy').should('be.false'); 
+        cy.isVisible('body').should('be.true');
+        cy.isVisible('bodyy').should('be.false'); 
+        cy.hasText('body', 'default blank page').should('be.true');
+        cy.hasText('body', 'default blanket page').should('be.false');        
+
+
+```
+
+and many more options, as you can find below, in this page.
+
+<h2>Load required function</h2>
+If you decide, that you don't want to change anything in cypress commands, however you want to test boolean cases in <b>if</b> statement, or wait for a condition in a <b>while</b> loop, this is probably the better option for you.
+
+in order to load specific function, use:
+
+```javascript
+const { exists } = require('cypress-extender');
+```
+
+or alternativly:
+
+```javascript
+import { exists } from 'cypress-extender';
+```
+
+in both ways you'll be able to test things like:
+
+```javascript
+if (exists('body')) { /* DO SOMETHING */ }
+while (exists('body')) { /* DO SOMETHING */ }
+for (let i = 0; i <  SOME_MAX_TRIES && exists('body'); i++ ) {
+    /* DO SOMETHING */
+}
+```
+
+so you'll be able for example to implement something like
+
+```javascript
+const isOpened = () => exists(' SELECTOR THAT APPEARS WHEN OPENED');
+const openDropDown = !isOpened() && cy.get('SOME SELECTOR TO OPEN').click();
+
+```
+
+Also here we support <b>visible</b> in a differnt way, than the usual cy.get('SELECTOR').should('be.visible');
+
+what if, for example you want to wait for element to exist and to be visible, now you can.
+Simply use something like:
+
+```javascript
+import { isVisible } from 'cypress-extender';
+while (isVisible('SELECTOR OF ELEMENT')) {
+    /* DO SOMETHING */
+}
+
+```
+
+very simple to use, and should make cypress code much easier to use.
+
+<h2> Supported functions </h2> 
+    <table>
+        <thead>
+            <th>function</th>
+            <th>what is it</th>
+        </tead>
+        <tbody>
+        <tr>
+            <td>exists</td>
+            <td>element should exist, in DOM</td>
+        </tr>
+        <tr>
+            <td>isVisible</td>
+            <td>exists in DOM and visible</td>
+        </tr>
+        <tr>
+            <td>isCheckbox</td>
+            <td>element exists and is a checkbox</td>
+        </tr>
+        <tr>
+            <td>isChecked</td>
+            <td>element exists and is checked</td>
+        </tr>
+        <tr>
+            <td>hasText</td>
+            <td>element exists and includes text, this function get 2 arguments 
+            cssSelector, text(element should include)
+            </td>
+        </tr>
+        <tr>
+            <td>equals</td>
+            <td>element exists and its text equals to GIVEN TEXT, this function get 2 arguments 
+            cssSelector, text(element should be equal to)
+        </td>
+        </tr>
+        </tbody>
+    </table>
+
+    there are many more options available for this plugin, and hopefully I will find some time to update all of them here.
