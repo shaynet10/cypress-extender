@@ -1,6 +1,6 @@
 {
   "name": "cypress-extender",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Extends the basic functinality of Cypress to ease its usage.",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/shaynet10/cypress-extender"
-},
+  },
   "keywords": [
     "cypress",
     "cyprss",
