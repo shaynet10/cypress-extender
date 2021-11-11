@@ -1,15 +1,23 @@
 # cypress-extender
 
-<p>Cypress Extender, extends the basic functinality of Cypress to ease its usage.
-<p>
+<p>Extends the basic functinality of Cypress (now we can use while/if/for with Cypress)
+</p>
 
 <h2> Why </h2>
-<p>In the usual <a href="https://docs.cypress.io/api/commands/get"> cy.get </a>, every test fails, when  element doesn't exist. 
+<p>To combine cypress commands with <b>while/if/for</b></p>
+<p>To make tests short and clear (cy.isVisible(CSS).should('be.false'))</p>
+<p>To have less flaky tests (cy.isVisible returns false if the element doesn't exist)</p>
+<p>                         (cy.get(CSS).should('be.visible') fails for element doesn't exist)</p>
+<p></p>
+<h3>Why is it needed</h3>
+<p>Let's suppose that we have an element that appears <b>ONLY</b> after a specific event</p>  
+<p>In a usual <a href="https://docs.cypress.io/api/commands/get"> cy.get </a> approach, </p>
+<p>our test will fail (or even worse will be flaky) depending if that event happend/didn't happen before we searched for the element
 </p>
-<p>Where sometimes, we want to test cases where element doesn't exist, or we want to wait while while the element doesn't exist</p>
 <p>i.e. open dropdown and wait for inner element to be created there, to identify, it's opened
 </p>
 <p> With Cypress Extender it's possible, in fact we can use an <b>if</b> ccondition, or <b>while</b> loop, to test condition of element</p>
+
 
 <h2> Prerequisites </h2>
 <p>In order to use this plugin:</p>
