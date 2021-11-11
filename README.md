@@ -145,9 +145,9 @@ very simple to use, and should make cypress code much easier to use.
             <td>element exists and is checked</td>
         </tr>
         <tr>
-            <td>hasText</td>
-            <td>element exists and includes text, this function get 2 arguments 
-            cssSelector, text(element should include)
+            <td>contains</td>
+            <td>element exists and its text contains GIVEN TEXT, this function get 2 arguments 
+            cssSelector, text
             </td>
         </tr>
         <tr>
@@ -156,7 +156,78 @@ very simple to use, and should make cypress code much easier to use.
             cssSelector, text(element should be equal to)
         </td>
         </tr>
+        <tr>
+            <td>isEmpty</td>
+            <td>element exists and has no children
+        </td>
+        </tr>
+        <tr>
+            <td>hasNoChildren</td>
+            <td>element exists and has no children
+        </td>
+        </tr>
+        <tr>
+            <td>isDisabled</td>
+            <td>element exists and is disabled
+        </td>
+        </tr>
+        <tr>
+            <td>isEnabled</td>
+            <td>element exists and is enabled (not disabled)
+        </td>
+        </tr>
+        <tr>
+            <td>isFile</td>
+            <td>element exists and is of type file (mostly input[type=file])
+        </td>
+        </tr>
+        <tr>
+            <td>isFirstChild</td>
+            <td>element exists and is the first child of its parent element
+        </td>
+        </tr>
+        <tr>
+            <td>isFocused</td>
+            <td>element exists and is in focus state
+        </td>
+        </tr>
+        <tr>
+            <td>hasSelector</td>
+            <td>element exists and has among its descendants element that matches the css selector
+        </td>
+        </tr>
+        <tr>
+            <td>isHeader</td>
+            <td>element exists and is of type header (h1, h2, h5 ...)
+        </td>
+        </tr>
+        <tr>
+            <td>isHidden</td>
+            <td>element exists and is hidden
+        </td>
+        </tr>
+        <tr>
+            <td>isImage</td>
+            <td>element exists and is of type image
+        </td>
+        </tr>
+        <tr>
+            <td>isInput</td>
+            <td>element exists and is of type input
+        </td>
+        </tr>
+        <tr>
+            <td>isAnimated</td>
+            <td>element exists and is recognized as running some animation (by JQuery)
+        </td>
+        </tr>
+        <tr>
+            <td>isButton</td>
+            <td>element exists and is of type button
+        </td>
+        </tr>
+        
         </tbody>
     </table>
 
-    there are many more options available for this plugin, and hopefully I will find some time to update all of them here.
+    there are more options available for this plugin, and hopefully I will find some time to update all of them here.

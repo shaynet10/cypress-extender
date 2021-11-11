@@ -4,7 +4,7 @@ export const exists = (selector) => found(selector);
 export const isVisible = (selector) => found(`${selector}:visible`);
 export const isCheckbox = (selector) => found(`${selector}:checkbox`);
 export const isChecked = (selector) => found(`${selector}:checked`);
-export const hasText = (selector, text) => found(`${selector}:contains(${text})`);
+export const contains = (selector, text) => found(`${selector}:contains(${text})`);
 export const equals = (selector, text) => found(`${selector}:eq(${text})`);
 export const isEmpty = (selector) => found(`${selector}:empty)`);
 export const hasNoChildren = (selector, text) => found(`${selector}:empty)`);
@@ -39,7 +39,7 @@ export const initCypress = () => {
     Cypress.Commands.add('isVisible', isVisible);
     Cypress.Commands.add('isCheckbox', isCheckbox);
     Cypress.Commands.add('isChecked', isChecked);
-    Cypress.Commands.add('hasText', hasText);
+    Cypress.Commands.add('contains', contains);
     Cypress.Commands.add('equals', equals);
     Cypress.Commands.add('isEmpty', isEmpty);
     Cypress.Commands.add('hasNoChildren', hasNoChildren);

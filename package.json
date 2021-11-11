@@ -1,7 +1,7 @@
 {
   "name": "cypress-extender",
   "version": "1.0.12",
-  "description": "Extends the basic functinality of Cypress to ease its usage.",
+  "description": "Extends the functinality of Cypress to ease its usage.",
   "main": "index.js",
   "scripts": {
     "test": "cd test; ../node_modules/.bin/cypress run"
@@ -11,6 +11,13 @@
     "url": "https://github.com/shaynet10/cypress-extender"
   },
   "keywords": [
+    "Cypress",
+    "Cypres",
+    "Cyprss",
+    "pptr",
+    "selenium",
+    "condition",
+    "loop",
     "cypress",
     "cyprss",
     "cprss",
@@ -32,8 +39,5 @@
     "cypress-condition"
   ],
   "author": "Shay Gueta",
-  "license": "MIT",
-  "dependencies": {
-    "cypress": "^8.2.0"
-  }
+  "license": "MIT"
 }
