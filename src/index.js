@@ -1,3 +1,5 @@
+export * from './logger';
+
 const found = (selector) => Cypress.$(selector).length > 0;
 
 export const exists = (selector) => found(selector);

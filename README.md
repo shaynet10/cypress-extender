@@ -239,3 +239,95 @@ very simple to use, and should make cypress code much easier to use.
     </table>
 
     there are more options available for this plugin, and hopefully I will find some time to update all of them here.
+
+
+    <h2> Log functions </h2> 
+
+    <h3> What are log function ? </h3>
+    <p> It is a new way to write text/data to your live report created by Cypress </p>
+    <p> for example: </p>
+    <p> If I don't like to search in the entire report scrolling up and down </p>
+    <p> to find that specific log message that represents what I'm searching for <p>
+    <p> this is exactly where log messages do that work for me <p>
+
+    Use: 
+
+    ``` javascript
+        import { INFO } from 'cypress-extender';
+        INFO("My data is", someDataObjectOrArray);
+    ```
+
+    Or Use:
+
+    ``` javascript
+        import { initCypressWithLogger } from 'cypress-extender';
+        initCypressWithLogger();
+
+        cy.Info("My data is", someDataObjectOrArray);
+    ```
+
+    Which will display a nice INFO line in you report (instead of the old log line).
+
+    <h2>Supported log functions </h2>
+
+    <table>
+        <thead>
+            <th>function</th>
+            <th>what is it</th>
+        </tead>
+        <tbody>
+        <tr>
+            <td>Info</td>
+            <td>displays INFO message in the Cypress report</td>
+        </tr>
+        <tr>
+            <td>INFO</td>
+            <td>displays INFO message in the Cypress report</td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td>displays MESSAGE message in the Cypress report</td>
+        </tr>
+        <tr>
+            <td>MESSAGE</td>
+            <td>displays MESSAGE message in the Cypress report</td>
+        </tr>
+        <tr>
+            <td>Debug</td>
+            <td>displays DEBUG message in the Cypress report</td>
+        </tr>
+        <tr>
+            <td>DEBUG</td>
+            <td>displays DEBUG message in the Cypress report</td>
+        </tr>
+        <tr>
+            <td>Warn</td>
+            <td>displays WARN message in the Cypress report</td>
+        </tr>
+        <tr>
+            <td>WARN</td>
+            <td>displays WARN message in the Cypress report</td>
+        </tr>
+        <tr>
+            <td>Custom</td>
+            <td>Allows you to decide what message you want to be printed in the report</td>
+        </tr>
+        <tr>
+            <td>CUSTOM</td>
+            <td>Allows you to decide what message you want to be printed in the report</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <h3>
+    Example to the custom command
+    </h3>
+
+    ```javascript
+
+        import { CUSTOM } from 'cypress-extender';
+        CUSTOM("YourFuncName", "My data is", someDataObjectOrArray);
+
+    ```
+    
