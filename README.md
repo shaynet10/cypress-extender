@@ -130,6 +130,7 @@ while (isVisible('SELECTOR OF ELEMENT')) {
 very simple to use, and should make cypress code much easier to use.
 
 <h2> Supported functions </h2> 
+<p>
     <table>
         <thead>
             <th>function</th>
@@ -234,48 +235,50 @@ very simple to use, and should make cypress code much easier to use.
             <td>element exists and is of type button
         </td>
         </tr>
-        
         </tbody>
     </table>
+</p>
 
-    there are more options available for this plugin, and hopefully I will find some time to update all of them here.
+<h2> Log functions </h2> 
 
+<h3> What are log function ? </h3>
+<p> It is a new way to write text/data to your live report created by Cypress </p>
+<p> for example: </p>
+<p> If I don't like to search in the entire report scrolling up and down </p>
+<p> to find that specific log message that represents what I'm searching for <p>
+<p> this is exactly where log messages do that work for me <p>
 
-    <h2> Log functions </h2> 
+Use: 
 
-    <h3> What are log function ? </h3>
-    <p> It is a new way to write text/data to your live report created by Cypress </p>
-    <p> for example: </p>
-    <p> If I don't like to search in the entire report scrolling up and down </p>
-    <p> to find that specific log message that represents what I'm searching for <p>
-    <p> this is exactly where log messages do that work for me <p>
-
-    Use: 
-
-    ``` javascript
+``` javascript
         import { INFO } from 'cypress-extender';
-        INFO("My data is", someDataObjectOrArray);
-    ```
+        INFO("hi how are you");
+```
 
-    Or Use:
+Or Use:
 
-    ``` javascript
+``` javascript
         import { initCypressWithLogger } from 'cypress-extender';
         initCypressWithLogger();
 
-        cy.Info("My data is", someDataObjectOrArray);
-    ```
+        cy.Info("hi how are you");
+```
 
-    Which will display a nice INFO line in you report (instead of the old log line).
+Which will display a nice INFO line in you report (instead of the old log line).
 
-    <h2>Supported log functions </h2>
+Such as:
 
-    <table>
-        <thead>
-            <th>function</th>
-            <th>what is it</th>
-        </tead>
-        <tbody>
+[INFO example](public/images/infoExample.jpeg)
+
+
+<h2>Supported log functions </h2>
+
+<table>
+    <thead>
+        <th>function</th>
+        <th>what is it</th>
+    </tead>
+    <tbody>
         <tr>
             <td>Info</td>
             <td>displays INFO message in the Cypress report</td>
@@ -316,18 +319,17 @@ very simple to use, and should make cypress code much easier to use.
             <td>CUSTOM</td>
             <td>Allows you to decide what message you want to be printed in the report</td>
         </tr>
+    </tbody>
+</table>
 
-        </tbody>
-    </table>
+<h3>
+Example to the custom command
+</h3>
 
-    <h3>
-    Example to the custom command
-    </h3>
-
-    ```javascript
+```javascript
 
         import { CUSTOM } from 'cypress-extender';
         CUSTOM("YourFuncName", "My data is", someDataObjectOrArray);
 
-    ```
+```
     
