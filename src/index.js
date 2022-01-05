@@ -1,4 +1,4 @@
-export * from './logger';
+export { Info, INFO, Message, MESSAGE, Debug, DEBUG, Warn, WARN, Custom, CUSTOM, initCypressWithLogger } from './logger';
 
 const found = (selector) => Cypress.$(selector).length > 0;
 
