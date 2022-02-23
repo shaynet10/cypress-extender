@@ -239,6 +239,28 @@ very simple to use, and should make cypress code much easier to use.
     </table>
 </p>
 
+<h2> Map function </h2>
+
+<h3> What is map function ?</h3>
+<p> map function is a simple way to run a callback function</p>
+<p> on each element returned from the previous command</p>
+<p> and return its results as an array</p>
+
+Use: 
+
+
+``` javascript
+        import { initCypressWithMap } from 'cypress-extender';
+        initCypressWithMap();
+
+        cy.get('li').map(e => e.text().trim()).then(texts => {
+            cy.log('Text are ', texts);
+        });
+```
+
+Or any other jquery function combined/not combined with js code.
+
+
 <h2> Log functions </h2> 
 
 <h3> What are log function ? </h3>
