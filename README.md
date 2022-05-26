@@ -4,7 +4,7 @@
 </p>
 
 <p>
-[![Build Status](https://app.travis-ci.com/shaynet10/cypress-extender.svg?branch=main)](https://app.travis-ci.com/shaynet10/cypress-extender)
+<img src="https://app.travis-ci.com/shaynet10/cypress-extender.svg?branch=main">
 </p>
 
 <h2> Why </h2>
