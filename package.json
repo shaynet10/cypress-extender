@@ -4,7 +4,7 @@
   "description": "Extends the functinality of Cypress to ease its usage.",
   "main": "index.js",
   "scripts": {
-    "test": "cd test; ../node_modules/.bin/cypress run"
+    "test": "cd test; ./node_modules/.bin/cypress run"
   },
   "repository": {
     "type": "git",

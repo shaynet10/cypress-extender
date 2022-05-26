@@ -3,6 +3,10 @@
 <p>Extends the basic functinality of Cypress (now we can use while/if/for with Cypress)
 </p>
 
+<p>
+[![Build Status](https://app.travis-ci.com/shaynet10/cypress-extender.svg?branch=main)](https://app.travis-ci.com/shaynet10/cypress-extender)
+</p>
+
 <h2> Why </h2>
 <p>To combine cypress commands with <b>while/if/for</b></p>
 <p>To make tests short and clear (cy.isVisible(CSS).should('be.false'))</p>

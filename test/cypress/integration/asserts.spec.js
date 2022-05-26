@@ -1,9 +1,24 @@
+import { initCypress } from 'cypress-extender';
+initCypress();
+
 describe('asserts', () => {
     beforeEach(() => {
         cy.visit('https://www.google.com/');
     });
     
-    it('some test', () => {
-        console.log('some test');
+    it('test exists', () => {
+        cy.exists('body').should('be.true');
+        cy.exists('bodyy').should('be.false'); 
+    });
+    
+    it('test isVisible', () => {
+        cy.isVisible('body').should('be.true');
+        cy.isVisible('bodyy').should('be.false'); 
+        
+    });
+    
+    it('test contains', () => {
+        cy.contains('body', 'Google').should('be.true');
+        cy.contains('body', 'GoogleMoogle').should('be.false');        
     });
 });
