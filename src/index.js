@@ -1,5 +1,5 @@
 export { Info, INFO, Message, MESSAGE, Debug, DEBUG, Warn, WARN, Custom, CUSTOM, initCypressWithLogger } from './logger';
-export { initCypressWithMap } from './mapper';
+export { initCypressWithArrays } from './array';
 
 const found = (selector) => Cypress.$(selector).length > 0;
 

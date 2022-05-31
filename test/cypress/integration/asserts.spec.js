@@ -1,7 +1,7 @@
 import { initCypress } from 'cypress-extender';
 initCypress();
 
-describe('asserts', () => {
+describe.skip('asserts', () => {
     beforeEach(() => {
         cy.visit('https://www.google.com/');
     });
