@@ -1,4 +1,4 @@
-import { initCypress } from 'cypress-extender';
+import { initCypress } from '../../../src/index';
 initCypress();
 
 describe.skip('asserts', () => {

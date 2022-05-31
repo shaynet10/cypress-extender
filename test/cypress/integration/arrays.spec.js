@@ -1,4 +1,4 @@
-import { initCypressWithArrays } from 'cypress-extender';
+import { initCypressWithArrays } from '../../../src/index';
 initCypressWithArrays();
 
 describe('arrays', () => {
