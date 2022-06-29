@@ -44,7 +44,7 @@ Once cypress-extender is installed you can use:
 <h3> What is every function ?</h3>
 
 <p> Now when you get Cypress Chainable elements</p>
-<p>you can use a every function, </p>
+<p>you can use an every function, </p>
 <p>exactly as you do in a normal JS every</p>
 
 <p> which checks that a callback function's result</p>
@@ -57,7 +57,7 @@ Use:
 import { initCypressWithArrays } from 'cypress-extender';
 initCypressWithArrays();
 
-it('test every prevSubjet is array', () => {
+it('test that every from the prevSubjet is a string', () => {
     cy.get('a').map(e => e.text()).every(v => typeof v === 'string').should('be.true');
 });
 
