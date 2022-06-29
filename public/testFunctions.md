@@ -18,6 +18,7 @@
     </ul>
 </p>
 
+
 <h2>Installation</h2>
 <p>To install the plugin to your project please use:</p>
 
@@ -31,18 +32,13 @@ in order to also add it to your package.json file so you can use:</p>
 npm install --save-prod cypress-extender
 ```
 
+
 <h2>Manual</h2>
 <p>
 Once Cypress Extender is installed, </p>
-<p>there are 2 main options to use this plugin
-    <ul>
-        <li>initCypress - adds this plugin's commands to cypress</li>
-        <li>load and use specific function - doesn't change anything in cypress commands</li>
-    </ul>
-</p>
-
-<h2>initCypress</h2>
-<p> in order to load all the extender commands to cypress use:</p>
+<p>You can use:</p>
+<h3>initCypress</h3>
+<p> to later be able to use cy... extended command</p>
 
 ```javascript
 const { initCypress } = require('cypress-extender');
@@ -56,26 +52,23 @@ import { initCypress } from 'cypress-extender';
 initCypress();
 ```
 
-in both ways, you'll get many new functions added to cypress, such as:
+you'll get new cypress commands such as:
 
 ```javascript
 
-        cy.exists('body').should('be.true');
-        cy.exists('bodyy').should('be.false'); 
-        cy.isVisible('body').should('be.true');
-        cy.isVisible('bodyy').should('be.false'); 
-        cy.hasText('body', 'default blank page').should('be.true');
-        cy.hasText('body', 'default blanket page').should('be.false');        
-
+cy.exists('body'); 
+cy.isVisible('body'); 
+cy.hasText('body', 'default blank page');
 
 ```
 
-and many more options, as you can find below, in this page.
+and others (see below in this page).
 
 <h2>Load required function</h2>
-If you decide, that you don't want to change anything in cypress commands, however you want to test boolean cases in <b>if</b> statement, or wait for a condition in a <b>while</b> loop, this is probably the better option for you.
+<p>you don't want to add cy... commands</p> <p>instead you want to combine fast JQuery commands in:</p>
+<p><b>if/while/for commands</b>, this is probably the better option for you.
 
-in order to load specific function, use:
+Use:
 
 ```javascript
 const { exists } = require('cypress-extender');
@@ -87,7 +80,9 @@ or alternativly:
 import { exists } from 'cypress-extender';
 ```
 
-in both ways you'll be able to test things like:
+<p><b>exist</b> is just one function (see below)</p>
+<p>
+So you'll be able to combine commands as:
 
 ```javascript
 if (exists('body')) { /* DO SOMETHING */ }
@@ -97,18 +92,17 @@ for (let i = 0; i <  SOME_MAX_TRIES && exists('body'); i++ ) {
 }
 ```
 
-so you'll be able for example to implement something like
+how awesome is this, so now we can write an example like:
 
-```javascript
-const isOpened = () => exists(' SELECTOR THAT APPEARS WHEN OPENED');
-const openDropDown = !isOpened() && cy.get('SOME SELECTOR TO OPEN').click();
+``` javascript
+const openDropdown = () => {
+    if (!exists('SELECTOR THAT APPEARS WHEN OPENED')) {
+        ('SOME SELECTOR TO OPEN').click();
+    }
+};
 
 ```
-
-Also here we support <b>visible</b> in a differnt way, than the usual cy.get('SELECTOR').should('be.visible');
-
-what if, for example you want to wait for element to exist and to be visible, now you can.
-Simply use something like:
+or to wait for visible element, write somthing like:
 
 ```javascript
 import { isVisible } from 'cypress-extender';
@@ -117,8 +111,6 @@ while (isVisible('SELECTOR OF ELEMENT')) {
 }
 
 ```
-
-very simple to use, and should make cypress code much easier to use.
 
 <h2> Supported functions </h2> 
 <p>

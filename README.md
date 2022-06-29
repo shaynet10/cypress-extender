@@ -19,3 +19,4 @@
 <p>To combine cypress commands with <b>while/if/for</b> see <a href="public/testFunctions.md"> test functions</a></p>
 <p>To <b>extend cypress array commands </b> see <a href="public/arrayFunctions.md">array functions</a></p>
 <p>To <b>custom and extend log commands</b> see <a href="public/logFunctions.md">log functions</a></p>
+
