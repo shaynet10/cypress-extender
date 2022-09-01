@@ -2,7 +2,7 @@ import { initCypressWithArrays } from '../../../src/index';
 initCypressWithArrays();
 
 describe('arrays', () => {
-    beforeEach(() => {
+    before(() => {
         cy.visit('https://www.google.com/');
     });
     
@@ -20,5 +20,12 @@ describe('arrays', () => {
         cy.get('a').every(e => typeof e.text() === 'string').should('be.true');
     });
 
+    it('test join texts are given', () => {
+        cy.get('a').map(e => e.text()).join("HOWAREYOU").should('include', 'HOWAREYOU');
+    });
+
+    it('test join elements are given', () => {
+        cy.get('a').join("HOWAREYOU").should('equal', '');
+    });
 });
 

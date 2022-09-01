@@ -62,3 +62,29 @@ it('test that every from the prevSubjet is a string', () => {
 });
 
 ```
+
+
+<h2> Join function </h2>
+
+<h3> What is join function ?</h3>
+
+<p> When you get Cypress Chainable elements with string values</p>
+<p>you can use an join function, </p>
+<p>exactly as you do in a normal JS join</p>
+
+<p> which returns a joined string from the array of strings</p>
+<p><b>NOTICE: </b> when you use chainable which is not a strings array, the joined value will be ''</p>
+
+Use: 
+
+
+``` javascript
+import { initCypressWithArrays } from 'cypress-extender';
+initCypressWithArrays();
+
+it('test join texts are given', () => {
+    cy.get('a').map(e => e.text()).join("HOWAREYOU").should('include', 'HOWAREYOU');
+});
+
+
+```
