@@ -2,13 +2,6 @@
 
 <p>usual JS array functions which are combined in Cypress</p>
 
-<h2> Map function </h2>
-
-<h3> What is map function ?</h3>
-<p> Now when you get Cypress Chainable elements</p>
-<p>you can use a map function, </p>
-<p>exactly as you do in a normal JS array</p>
-
 
 <h3> Installation </h3>
 <p>To install the plugin to your project please use:</p>
@@ -27,6 +20,13 @@ npm install --save-prod cypress-extender
 
 Once cypress-extender is installed you can use:
 
+<h2> Map function </h2>
+
+<h3> What is map function ?</h3>
+<p> Now when you get Cypress Chainable elements</p>
+<p>you can use a map function, </p>
+<p>exactly as you do in a normal JS array</p>
+
 
 ``` javascript
         import { initCypressWithArrays } from 'cypress-extender';
@@ -35,6 +35,39 @@ Once cypress-extender is installed you can use:
         cy.get('li').map(e => e.text().trim()).then(texts => {
             cy.log('Texts are: ', texts);
         });
+```
+
+
+<h2> Reduce function </h2>
+
+<h3> What is reduce function ?</h3>
+<p> Now when you get Cypress Chainable elements</p>
+<p>you can use a reduce function, </p>
+<p>exactly as you do in a normal JS array</p>
+
+
+``` javascript
+        import { initCypressWithArrays } from 'cypress-extender';
+        initCypressWithArrays();
+
+    it('test array reduce with array', () => {
+        cy.get('a').map(e => e.text()).reduce((acc, val) => {
+            acc.push(val[0]);
+            return acc;
+        }, []).should('have.length.gt', 0);
+    });
+
+    it('test array reduce with string', () => {
+        cy.get('a').map(e => e.text()).reduce((acc, val) => {
+            acc += val[0] || '';
+            return acc;
+        }, '').should('have.length.gt', 0);
+    });
+
+    it('test array reduce with number', () => {
+        cy.get('a').map(e => e.text()).reduce((acc, val) => acc += val.length, 0)
+        .should('be.gt', 0);
+    });
 ```
 
 

@@ -19,6 +19,15 @@ export const initCypressWithArrays = () => {
         return cy.wrap(results);
     });
 
+    Cypress.Commands.add('reduce', {
+        prevSubject: ['Array'],
+    }, (subject, callbackFn, initialValue = 0) => {
+        return cy.wrap(subject).then(values => {
+            return values.reduce(callbackFn, initialValue);
+        });
+    });
+
+
     Cypress.Commands.add('every', {
         prevSubject: ['element', 'Array'],
     }, (subject, callbackFn) => {

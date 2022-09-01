@@ -27,5 +27,24 @@ describe('arrays', () => {
     it('test join elements are given', () => {
         cy.get('a').join("HOWAREYOU").should('equal', '');
     });
+
+    it('test array reduce with array', () => {
+        cy.get('a').map(e => e.text()).reduce((acc, val) => {
+            acc.push(val[0]);
+            return acc;
+        }, []).should('have.length.gt', 0);
+    });
+
+    it('test array reduce with string', () => {
+        cy.get('a').map(e => e.text()).reduce((acc, val) => {
+            acc += val[0] || '';
+            return acc;
+        }, '').should('have.length.gt', 0);
+    });
+
+    it('test array reduce with number', () => {
+        cy.get('a').map(e => e.text()).reduce((acc, val) => acc += val.length, 0)
+        .should('be.gt', 0);
+    });
 });
 
