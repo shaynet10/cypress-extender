@@ -10,7 +10,7 @@ export const isChecked = (selector) => found(`${selector}:checked`);
 export const contains = (selector, text) => found(`${selector}:contains(${text})`);
 export const equals = (selector, text) => found(`${selector}:eq(${text})`);
 export const isEmpty = (selector) => found(`${selector}:empty)`);
-export const hasNoChildren = (selector, text) => found(`${selector}:empty)`);
+export const hasNoChildren = (selector) => found(`${selector}:empty)`);
 export const isDisabled = (selector) => found(`${selector}:disabled`);
 export const isEnabled = (selector) => found(`${selector}:enabled`);
 export const isFile = (selector) => found(`${selector}:file`);
@@ -38,6 +38,46 @@ export const isSubmit = (selector) => found(`${selector}:submit`);
 export const isText = (selector) => found(`${selector}:text`);
 
 export const initCypress = () => {
+    declare global {
+        namespace Cypress {
+            interface Chainable {
+                exists(selector: string): Chainable<boolean>;
+                isVisible(selector: string): Chainable<boolean>;
+                isCheckbox(selector: string): Chainable<boolean>;
+                isChecked(selector: string): Chainable<boolean>;
+                contains(selector: string, text: string): Chainable<boolean>;
+                equals(selector: string, text: string): Chainable<boolean>;
+                isEmpty(selector: string): Chainable<boolean>;
+                hasNoChildren(selector: string): Chainable<boolean>;
+                isDisabled(selector: string): Chainable<boolean>;
+                isEnabled(selector: string): Chainable<boolean>;
+                isFile(selector: string): Chainable<boolean>;
+                isFirstChild(selector: string): Chainable<boolean>;
+                isFocused(selector: string): Chainable<boolean>;
+                hasSelector(selector: string, innerSelector: string): Chainable<boolean>;
+                isHeader(selector: string): Chainable<boolean>;
+                isHidden(selector: string): Chainable<boolean>;
+                isImage(selector: string): Chainable<boolean>;
+                isInput(selector: string): Chainable<boolean>;
+                isAnimated(selector: string): Chainable<boolean>;
+                isButton(selector: string): Chainable<boolean>;
+                isLanguage(selector: string): Chainable<boolean>;
+                isLast(selector: string): Chainable<boolean>;
+                isLastChild(selector: string): Chainable<boolean>;
+                isLastOfType(selector: string): Chainable<boolean>;
+                isNot(selector: string, notSelector: string): Chainable<boolean>;
+                isParent(selector: string): Chainable<boolean>;
+                isPassword(selector: string): Chainable<boolean>;
+                isRadio(selector: string): Chainable<boolean>;
+                isReset(selector: string): Chainable<boolean>;
+                isRoot(selector: string): Chainable<boolean>;
+                isSelected(selector: string): Chainable<boolean>;
+                isSubmit(selector: string): Chainable<boolean>;
+                isText(selector: string): Chainable<boolean>;
+            }
+        }
+    }
+
     Cypress.Commands.add('exists', exists);
     Cypress.Commands.add('isVisible', isVisible);
     Cypress.Commands.add('isCheckbox', isCheckbox);

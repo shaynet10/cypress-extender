@@ -14,7 +14,6 @@ describe.skip('asserts', () => {
     it('test isVisible', () => {
         cy.isVisible('body').should('be.true');
         cy.isVisible('bodyy').should('be.false'); 
-        
     });
     
     it('test contains', () => {
