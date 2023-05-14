@@ -1,5 +1,5 @@
 export { Info, INFO, Message, MESSAGE, Debug, DEBUG, Warn, WARN, Custom, CUSTOM, initCypressWithLogger } from './logger';
-export { initCypressWithArrays } from './array';
+import { initCypressWithArrays } from './array';
 
 const found = (selector) => Cypress.$(selector).length > 0;
 
@@ -73,3 +73,4 @@ export const initCypress = () => {
     Cypress.Commands.add('isText', isText);    
 };
     
+export { initCypressWithArrays };
