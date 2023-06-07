@@ -1,4 +1,4 @@
-import { initCypress } from '../../../src/index';
+import { initCypress } from '../../../src/index.js';
 initCypress();
 
 describe.skip('asserts', () => {

@@ -40,5 +40,8 @@
     "cypress-condition"
   ],
   "author": "Shay Gueta",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cypress-extender-arrays": "^1.1.2"
+  }
 }

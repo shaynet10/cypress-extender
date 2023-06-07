@@ -1,7 +1,3 @@
-import { initCypressWithArrays } from './src';
-
-export * from './src';
-
 declare namespace Cypress {
     interface Chainable {
         exists(selector: string): boolean 
@@ -38,6 +34,7 @@ declare namespace Cypress {
         isSubmit(selector: string): boolean 
         isText(selector: string): boolean      
         map(callbackFn): Chainable
+        
     }
 }
 
