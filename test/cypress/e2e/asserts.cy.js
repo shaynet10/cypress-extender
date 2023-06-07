@@ -1,7 +1,6 @@
-import { initCypress } from '../../../src/index.js';
-initCypress();
+import '../../../src/index.js';
 
-describe.skip('asserts', () => {
+describe('asserts', () => {
     beforeEach(() => {
         cy.visit('https://www.google.com/');
     });
@@ -16,8 +15,4 @@ describe.skip('asserts', () => {
         cy.isVisible('bodyy').should('be.false'); 
     });
     
-    it('test contains', () => {
-        cy.contains('body', 'Google').should('be.true');
-        cy.contains('body', 'GoogleMoogle').should('be.false');        
-    });
 });

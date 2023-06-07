@@ -1,5 +1,5 @@
 export { Info, INFO, Message, MESSAGE, Debug, DEBUG, Warn, WARN, Custom, CUSTOM, initCypressWithLogger } from './logger';
-import { initCypressWithArrays } from './array';
+export { initCypressWithArrays } from './array';
 
 const found = (selector) => Cypress.$(selector).length > 0;
 
@@ -37,78 +37,37 @@ export const isSelected = (selector) => found(`${selector}:selected`);
 export const isSubmit = (selector) => found(`${selector}:submit`);
 export const isText = (selector) => found(`${selector}:text`);
 
-export const initCypress = () => {
-    declare namespace Cypress {
-        interface Chainable {
-            exists(selector: string): boolean;
-            isVisible(selector: string): boolean;
-            isCheckbox(selector: string): boolean;
-            isChecked(selector: string): boolean;
-            hasText(selector: string, text: string): boolean;
-            equals(selector: string, text: string): boolean;
-            isEmpty(selector: string): boolean;
-            hasNoChildren(selector: string, text: string): boolean;
-            isDisabled(selector: string): boolean;
-            isEnabled(selector: string): boolean;
-            isFile(selector: string): boolean;
-            isFirstChild(selector: string): boolean; 
-            isFocused(selector: string): boolean;
-            hasSelector(selector: string, innerSelector: string): boolean;
-            isHeader(selector: string): boolean;
-            isHidden(selector: string): boolean;
-            isImage(selector: string): boolean;
-            isInput(selector: string): boolean;
-            isAnimated(selector: string): boolean;
-            isButton(selector: string): boolean;
-            isLanguage(selector: string): boolean;
-            isLast(selector: string): boolean;
-            isLastChild(selector: string): boolean;
-            isLastOfType(selector: string): boolean;
-            isNot(selector: string, notSelector: string): boolean;
-            isParent(selector: string): boolean;
-            isPassword(selector: string): boolean;
-            isRadio(selector: string): boolean;
-            isReset(selector: string): boolean;
-            isRoot(selector: string): boolean;
-            isSelected(selector: string): boolean;
-            isSubmit(selector: string): boolean;
-            isText(selector: string): boolean;   
-        }
-    }
-
-    Cypress.Commands.add('exists', exists);
-    Cypress.Commands.add('isVisible', isVisible);
-    Cypress.Commands.add('isCheckbox', isCheckbox);
-    Cypress.Commands.add('isChecked', isChecked);
-    Cypress.Commands.add('contains', contains);
-    Cypress.Commands.add('equals', equals);
-    Cypress.Commands.add('isEmpty', isEmpty);
-    Cypress.Commands.add('hasNoChildren', hasNoChildren);
-    Cypress.Commands.add('isDisabled', isDisabled);
-    Cypress.Commands.add('isEnabled', isEnabled);
-    Cypress.Commands.add('isFile', isFile);
-    Cypress.Commands.add('isFirstChild', isFirstChild);
-    Cypress.Commands.add('isFocused', isFocused);
-    Cypress.Commands.add('hasSelector', hasSelector);
-    Cypress.Commands.add('isHeader', isHeader);
-    Cypress.Commands.add('isHidden', isHidden);
-    Cypress.Commands.add('isImage', isImage);
-    Cypress.Commands.add('isInput', isInput);
-    Cypress.Commands.add('isAnimated', isAnimated);
-    Cypress.Commands.add('isButton', isButton);
-    Cypress.Commands.add('isLanguage', isLanguage);
-    Cypress.Commands.add('isLast', isLast);
-    Cypress.Commands.add('isLastChild', isLastChild);
-    Cypress.Commands.add('isLastOfType', isLastOfType);
-    Cypress.Commands.add('isNot', isNot);
-    Cypress.Commands.add('isParent', isParent);
-    Cypress.Commands.add('isPassword', isPassword);
-    Cypress.Commands.add('isRadio', isRadio);
-    Cypress.Commands.add('isReset', isReset);
-    Cypress.Commands.add('isRoot', isRoot);
-    Cypress.Commands.add('isSelected', isSelected);
-    Cypress.Commands.add('isSubmit', isSubmit);
-    Cypress.Commands.add('isText', isText);    
-};
+Cypress.Commands.add('exists', exists);
+Cypress.Commands.add('isVisible', isVisible);
+Cypress.Commands.add('isCheckbox', isCheckbox);
+Cypress.Commands.add('isChecked', isChecked);
+Cypress.Commands.add('equals', equals);
+Cypress.Commands.add('isEmpty', isEmpty);
+Cypress.Commands.add('hasNoChildren', hasNoChildren);
+Cypress.Commands.add('isDisabled', isDisabled);
+Cypress.Commands.add('isEnabled', isEnabled);
+Cypress.Commands.add('isFile', isFile);
+Cypress.Commands.add('isFirstChild', isFirstChild);
+Cypress.Commands.add('isFocused', isFocused);
+Cypress.Commands.add('hasSelector', hasSelector);
+Cypress.Commands.add('isHeader', isHeader);
+Cypress.Commands.add('isHidden', isHidden);
+Cypress.Commands.add('isImage', isImage);
+Cypress.Commands.add('isInput', isInput);
+Cypress.Commands.add('isAnimated', isAnimated);
+Cypress.Commands.add('isButton', isButton);
+Cypress.Commands.add('isLanguage', isLanguage);
+Cypress.Commands.add('isLast', isLast);
+Cypress.Commands.add('isLastChild', isLastChild);
+Cypress.Commands.add('isLastOfType', isLastOfType);
+Cypress.Commands.add('isNot', isNot);
+Cypress.Commands.add('isParent', isParent);
+Cypress.Commands.add('isPassword', isPassword);
+Cypress.Commands.add('isRadio', isRadio);
+Cypress.Commands.add('isReset', isReset);
+Cypress.Commands.add('isRoot', isRoot);
+Cypress.Commands.add('isSelected', isSelected);
+Cypress.Commands.add('isSubmit', isSubmit);
+Cypress.Commands.add('isText', isText);    
     
-export { initCypressWithArrays };
+// export { initCypressWithArrays };

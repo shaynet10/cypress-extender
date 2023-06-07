@@ -32,9 +32,7 @@ declare namespace Cypress {
         isRoot(selector: string): boolean 
         isSelected(selector: string): boolean 
         isSubmit(selector: string): boolean 
-        isText(selector: string): boolean      
-        map(callbackFn): Chainable
-        
+        isText(selector: string): boolean              
     }
 }
 
