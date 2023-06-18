@@ -42,6 +42,7 @@
   "author": "Shay Gueta",
   "license": "MIT",
   "dependencies": {
+    "cypress-clipboard": "^1.0.3",
     "cypress-extender-arrays": "^1.1.2"
   }
 }
